@@ -6,6 +6,7 @@ runner:
 build:
   commands: |
     echo "START: Building the runner"
+    apt install -y libmagic1
     python3 -m pip install -U -r requirements.txt
     echo "END: Building the runner"
 

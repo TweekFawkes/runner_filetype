@@ -35,10 +35,12 @@ def main():
         print(f"Magic library error: {str(e)}")
         return 1
     except ImportError as e:
-        if 'magic' in str(e):
+        if 'libmagic' in str(e):
+            print("System library 'libmagic' is missing.")
+            print("To fix, run: apt-get update && apt-get install -y libmagic1")
+            return 1
+        elif 'magic' in str(e):
             print("Please install python-magic first: pip install python-magic")
-            if os.name == 'nt':  # Windows
-                print("On Windows, you'll also need to install python-magic-bin: pip install python-magic-bin")
             return 1
         raise e
     except Exception as e:
