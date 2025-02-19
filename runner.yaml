@@ -1,0 +1,18 @@
+runner:
+  name: File Type
+  description: Determine the type of a file.
+  version: 0.0.1
+
+build:
+  commands: |
+    echo "START: Building the runner"
+    python3 -m pip install -U -r requirements.txt
+    echo "END: Building the runner"
+
+webform:
+  - name: uploaded_file
+    prompt: File to determine the type of
+    type: file
+
+launch:
+  command: app.py --uploaded_file ${uploaded_file}
