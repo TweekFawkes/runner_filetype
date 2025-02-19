@@ -7,7 +7,9 @@ build:
   commands: |
     echo "START: Building the runner"
     apt install -y libmagic1
+    ldconfig
     python3 -m pip install -U -r requirements.txt
+    ENV LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
     echo "END: Building the runner"
 
 webform:
