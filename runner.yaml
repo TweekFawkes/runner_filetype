@@ -1,5 +1,5 @@
 runner:
-  name: File Type
+  name: File Type Checker
   description: Determine the type of a file.
   version: 0.0.1
 
